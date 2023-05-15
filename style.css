@@ -1,4 +1,4 @@
-*{
+*{ /* these are universal selectors (or webpage-wide) */
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
@@ -9,20 +9,48 @@ body{
     color: #fff;
 }
 #header{ /*need to have a corresponding field for header, as it's an ID in the html file*/
-    width:100%;
+    width: 100%;
     height: 100vh;
 }
-.container{
-    padding: 10px 10%;
+.container{ /* defining the styling for all the of the objects of content-divisions of the class container */
+    padding: 2.5% 2.5%; /* first number is margin from top, second is margin from left */
 }
 
 nav{
     display: flex;
-    align-items: center;
-    justify-content: space-bewteen;
+    align-items: start; /* aligning the items to the top of the container */
+    justify-content: space-between;
     flex-wrap: wrap;
 }
 
-.logo{ /*corresponds tot he class "logo", defined in the html*/
-    width: 140px;
+.logo{ /*corresponds to the class "logo", defined in the html, tells us how big we want the logo to be*/
+    width: 100px;
+}
+
+nav ul li{ /* stylizing unordered lists and their list elements (nav refers to a section of the page that navigates to others)*/
+    display: inline-block; /* horizontally aligned */
+    list-style: none;
+    margin: 5px 20px; /* first number is top to bottom, second is left to right*/
+}
+
+nav ul li a{ /* stylizing the clickable elements in our list */
+    color: #fff;
+    text-decoration: none; /* if we want to decorate the text */
+    font-size: 18px;
+    position: relative;
+}
+
+nav ul li a::after{ /* :: creates a pseudo-element, which adds cosmetic content to a specific part of the selected elements*/
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: #4f94d4;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.4s; /* adding a transition time for when the cursor hovers over it. */
+}
+
+nav ul li a:hover::after{ /* activates the after when the item is being hovered over by the cursor */
+    width: 100%;
 }
