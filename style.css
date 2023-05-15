@@ -54,3 +54,17 @@ nav ul li a::after{ /* :: creates a pseudo-element, which adds cosmetic content 
 nav ul li a:hover::after{ /* activates the after when the item is being hovered over by the cursor */
     width: 100%;
 }
+
+.header-text{ /* defining the header-text ckass we created */
+    margin-top: 5%;
+    font-size: 30px;
+}
+
+.header-text h1{ /* specifying what to do with the h1 label in header-text */
+    font-size: 60px;
+    margin-top: 20px;
+}
+
+.header-text h1 span{
+    color: #4f94d4;
+}
