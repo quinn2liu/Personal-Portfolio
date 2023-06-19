@@ -1,14 +1,15 @@
 *{ /* these are universal selectors (or webpage-wide) */
     margin: 0;
     padding: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Fira Code';
+    padding-bottom: 2.5%;
     box-sizing: border-box;
 }
 body{
-    background: #1d2327;
-    color: #fff;
+    background: #f2f4e0;
+    color: #566264;
 }
-#header{ /*need to have a corresponding field for header, as it's an ID in the html file*/
+header{ /*need to have a corresponding field for header, as it's an ID in the html file*/
     width: 100%;
     height: 100vh;
 }
@@ -34,7 +35,7 @@ nav ul li{ /* stylizing unordered lists and their list elements (nav refers to a
 }
 
 nav ul li a{ /* stylizing the clickable elements in our list */
-    color: #fff;
+    color: #566264;
     text-decoration: none; /* if we want to decorate the text */
     font-size: 18px;
     position: relative;
@@ -44,7 +45,7 @@ nav ul li a::after{ /* :: creates a pseudo-element, which adds cosmetic content 
     content: '';
     width: 0;
     height: 3px;
-    background-color: #4f94d4;
+    background-color: hsl(209, 61%, 57%);
     position: absolute;
     left: 0;
     bottom: -6px;
@@ -67,4 +68,312 @@ nav ul li a:hover::after{ /* activates the after when the item is being hovered 
 
 .header-text h1 span{
     color: #4f94d4;
+}
+
+/* ABOUT SECTION */
+#about {
+    padding: 80px 0;
+}
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.about-col-1 {
+    flex-basis: 35%;
+}
+
+/* meant for personal image */
+.about-col-1 img {
+    width: 100%;
+    border-radius: 5%;
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+}
+
+.about-paragraph {
+    margin-top: 10px;
+    color: #566264;
+    font-size: large;
+    text-align: justify;
+}
+
+.about-paragraph span {
+    color: #4f94d4;
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    margin: auto;
+    color: #566264;
+}
+
+.tab-titles {
+    display: flex;
+    margin: 20px 0 px;
+}
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #4f94d4;
+    position: absolute;
+    left: 0;
+    bottom: -1px;
+    transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+    width: 100%;
+}
+
+.tab-contents ul li {
+    list-style: none;
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: #4f94d4;
+    font-size: 14px;
+}
+
+.tab-contents {
+    display: none;
+}
+
+.tab-contents.active-tab {
+    display: block;
+}
+
+/* PORTFOLIO SECTION */
+#portfolio {
+    padding: 30px 0;
+    color: white;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 10px;
+}
+.work {
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    transition: 0.5s;
+}
+.layer {
+    width: 100%;
+    height: 0;
+    background: linear-gradient(rgba(182, 182, 234, 0.6), #4f94d4);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 0 40px;
+    transition: height 0.5s;
+}
+
+.layer h4 {
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #4f94d4;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 30%;
+    text-align: center;
+}
+
+.work:hover img{
+    transform: scale(1.1);
+}
+
+.work:hover .layer {
+    height: 100%;
+}
+
+.btn {
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 3px solid #4f94d4;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #566264;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #4f94d4;
+    color: white;
+}
+
+/* CONTACT SECTION */
+.contact-left{
+    flex-basis: 35%;
+    padding: 2.5%;
+}
+.contact-left p{
+    margin-top: 20px;
+}
+.contact-left p i {
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    display: inline-block;
+    color: #566264;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #4f94d4;
+    transform: translateY(-5px);
+}
+
+.contact-right{
+    flex-basis: 60%;
+    padding: 2.5%;
+    margin-bottom: 60px;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #fff;
+    padding: 15px;
+    margin: 15px 0;
+    font-size: 16px;
+    border-radius: 6px;
+}
+form .btn2{
+    padding: 14px 50px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+    position: absolute;
+    border: 3px solid #4f94d4;
+    background: #f2f4e0;
+}
+
+nav .fa-solid{
+    display: none;
+}
+/* CSS FOR SMALL SCREENS */
+@media only screen and (max-device-width: 600px) {
+    
+    .header-text{
+        font-size: 30px;    
+    }
+    .header-text h1{
+        font-size: 60px;
+    }
+    
+    nav .fa-solid{
+        display: block;
+        font-size: 25px;
+    }
+    nav ul{
+        background:hsl(209, 61%, 57%);
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        color: white;
+        transition: right 0.5s;
+    }
+    nav ul li a{
+        display: block;
+        margin: 25px;
+        color: white;
+        font-size: 20px;
+        left: -20px;
+    }
+    nav ul .fa-solid{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .sub-title{
+        font-size: 60px;
+    }
+    .row{
+        flex-direction: column;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .about-col-1, .about-col-2{
+        width: 100%;
+    }
+    .tab-links{
+        font-size: 30px;
+        flex-basis: auto;
+    }
+    .tab-titles{
+        margin-top: 5%;
+    }
+    .work-list{
+        display: flex;
+        flex-direction: column;
+    }
+    .work{
+        width: 100%;
+        font-size: 30px;
+    }
+    .btn{
+        font-size: 40px;
+        border: 4px solid #4f94d4;
+    }
+
 }
